@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <el-button @click="click">按钮</el-button>
+
+</div>
+</body>
+<script src="../common/loaderJs.js"></script>
+<script>
+     new Vue({
+        el: "#app",
+        data:{
+            visible:true
+        },
+        methods: {
+            click: function () {
+                var data = {
+                    date:"ddd"
+                }
+                common.networkRequest("",data,"post",function () {
+                    console.log("AAAAAAAAAAAAAAAAAAAAAAAAA");
+                })
+            }
+        }
+    })
+</script>
+<script src="../common/common.js"></script>
+<script>
+    loaderJs.loaderListJs();
+</script>
+
+</html>
